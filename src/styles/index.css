@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-light: #ffffff;
+  --color-primary-dark: #111111;
+  --color-text-light: #111111;
+  --color-text-dark: #f9f9f9;
+  --color-accent-gold: #c9a96e;
+  --color-accent-crimson: #8b0000;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply font-sans transition-colors duration-300;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-editorial {
+    @apply font-serif tracking-tight;
+  }
+}
+
+/* Custom scrollbar matching stark aesthetic */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-gold);
+}
